@@ -1,0 +1,181 @@
+{{ 'brand-story-section3.css' | asset_url | stylesheet_tag }}
+
+<section id="{{section.id}}"> 
+          <div class="brand-section3">
+                <div class="section3-wrapper">
+                    <div class="row gx-0">
+                        <div class="col-12 space-box ">
+                            <div class="section3-brand3-image-box1">
+                                <picture>
+                                    <source media="(max-width:768px)" srcset="
+                                    {{section.settings.mb-story-image-1 | image_url: width: 500}} 500w,
+                                    {{section.settings.mb-story-image-1 | image_url: width: 750}} 750w,
+                                    {{section.settings.mb-story-image-1 | image_url: width: 1100}} 1100w,
+                                    {{section.settings.mb-story-image-1 | image_url: width: 1500}} 1500w">
+                            
+                                    {% comment %} <img src="{{section.settings.banner-image-desktop | image_url}}" alt="Responsive Image"
+                                        class="banner-image"> {% endcomment %}
+                                    {{
+                                        section.settings.pc-story-image-1
+                                    | image_url: width: 1800
+                                    | image_tag:
+                                    class: "section3-banner-image",
+                                    widths: '450, 660, 900, 1320, 1500,1800, 2136, 2400, 3600, 7680',
+                                    fetchpriority: 'high'
+                                    }}
+                                    
+                                </picture>
+                              
+                            </div>
+                            <div class="section3-brand3-text-box">
+                                <div class="text-head">
+                                      <h1>
+                                        <p>Pursuing</p>
+                                        <p>the Essence of</p>
+                                        <p>Home Aesthetics</p>
+                                      </h1>
+                                </div>
+                                <div class="text-bottom">
+                                    <p>Blend the realistic design into life scenes and
+                                    <br>use customized content to highlight your personal taste</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                       <div class="col-md-6">
+                        <div class="section3-brand4">
+                            <div class="section3-brand4-image-box">
+                                <picture>
+                                    <source media="(max-width:768px)" srcset="
+                                    {{section.settings.mb-story-image-2 | image_url: width: 500}} 500w,
+                                    {{section.settings.mb-story-image-2 | image_url: width: 750}} 750w,
+                                    {{section.settings.mb-story-image-2 | image_url: width: 1100}} 1100w,
+                                    {{section.settings.mb-story-image-2 | image_url: width: 1500}} 1500w">
+                            
+                                    {% comment %} <img src="{{section.settings.banner-image-desktop | image_url}}" alt="Responsive Image"
+                                        class="banner-image"> {% endcomment %}
+                                    {{
+                                        section.settings.pc-story-image-2
+                                    | image_url: width: 1780
+                                    | image_tag:
+                                    class: "section3-banner4-image",
+                                    widths: '450, 660, 900, 1320, 1500,1800, 2136, 2400, 3600, 7680',
+                                    fetchpriority: 'auto'
+                                    }}
+                                    
+                                </picture>
+                            </div>
+                            <div class="section3-brand4-text-box">
+                                <div class="section3-brand4-text-head">
+                                    <h2>
+                                        <p>Exploring the Road to Audiovisual<br>Enjoyment</p>
+                                    </h2>
+                                    
+
+                                </div>
+                                <div class="section3-brand4-text-content">
+                                    <p>By harmonizing music rhythms with dynamic
+                                        <br>visuals, we evoke emotions and excitement, inviting you to discover even more
+                                        <br>possibilities.
+                                    </p>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                       </div>
+                       <div class="col-md-5 offset-md-1">
+                           <div class="section3-brand5">
+                            <div class="section3-brand5-image-box">
+                                <picture>
+                                    <source media="(max-width:768px)" srcset="
+                                    {{section.settings.mb-story-image-3 | image_url: width: 500}} 500w,
+                                    {{section.settings.mb-story-image-3 | image_url: width: 750}} 750w,
+                                    {{section.settings.mb-story-image-3 | image_url: width: 1100}} 1100w,
+                                    {{section.settings.mb-story-image-3 | image_url: width: 1500}} 1500w">
+                            
+                                    {% comment %} <img src="{{section.settings.banner-image-desktop | image_url}}" alt="Responsive Image"
+                                        class="banner-image"> {% endcomment %}
+                                    {{
+                                        section.settings.pc-story-image-3
+                                    | image_url: width: 814
+                                    | image_tag:
+                                    class: "section3-banner5-image",
+                                    widths: '450, 660, 900, 1320, 1500,1800, 2136, 2400, 3600, 7680',
+                                    fetchpriority: 'auto'
+                                    }}
+                                    
+                                </picture>
+                            </div>
+                            <div class="section3-brand4-text-box">
+                                <div class="section3-brand4-text-head">
+                                    <h2>
+                                        <p>Breaking Through
+                                       <br>
+                                       the Boundaries of
+                                       <br>
+                                       Interactive Experience
+                                            </p>
+                                    </h2>
+                                    
+
+                                </div>
+                                <div class="section3-brand4-text-content">
+                                    <p>Bring a human touch to technology; make every moment count.</p>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+          </div>
+</section>
+
+
+
+
+
+
+
+
+
+{% schema %}
+   
+   
+   {
+    "name": "brand-story-section3",
+    "settings": [
+    {
+    "type": "image_picker",
+    "id": "pc-story-image-1",
+    "label": "story-image-1"
+    },
+    {
+    "type": "image_picker",
+    "id": "pc-story-image-2",
+    "label": "story-image-2"
+    },
+    {
+    "type": "image_picker",
+    "id": "pc-story-image-3",
+    "label": "story-image-3"
+    },
+    {
+    "type": "image_picker",
+    "id": "mb-story-image-1",
+    "label": "mobile-story-1"
+    },
+    {
+    "type": "image_picker",
+    "id": "mb-story-image-2",
+    "label": "mobile-story-image-2"
+    },
+    {
+    "type": "image_picker",
+    "id": "mb-story-image-3",
+    "label": "mobile-story-image-3"
+    }
+    ]
+    }
+    {% endschema %}

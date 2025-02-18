@@ -1,0 +1,190 @@
+{% style %}
+/* 1920 */
+.banner-section1{
+     background-color:black;
+ 
+
+}
+.cover{
+    position:absolute;
+  
+    bottom:0;
+    width:100%;
+    height:0;
+    padding-bottom:15%;
+    background: linear-gradient(180deg, #1110, #111);
+
+}
+.banner-wrapper {
+margin: 0 auto;
+max-width: 1920px;
+height: 1080px;
+position: relative;
+}
+
+.banner-image {
+/* 宽度随着容器自适应 */
+width: 100%;
+height: 100%;
+object-fit: cover;
+/* 保证图片比例，同时不会被拉伸或裁剪 */
+object-position: center;
+/* 确保图片从中心对齐，避免裁剪时出现偏差 */
+}
+
+.banner-logo-wrapper {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translateX(100px) translateY(-50%);
+width: 540px;
+}
+
+.banner-logo-image {
+padding-bottom: calc(100% / var(--pc-aspect-ratio));
+height: 0;
+}
+
+
+.logo {
+width: 100%;
+height: auto;
+object-fit: contain;
+}
+
+@media (max-width: 1400px) {
+.banner-wrapper {
+height: 786px;
+}
+
+.banner-logo-wrapper {
+
+transform: translateX(80px) translateY(-50%);
+width: 400px;
+height: auto;
+}
+
+}
+
+@media (max-width: 1200px) {
+.banner-wrapper {
+height: 675px;
+}
+
+.banner-logo-wrapper {
+
+transform: translateX(60px) translateY(-50%);
+width: 300px;
+height: auto;
+}
+
+}
+
+@media (max-width: 992px) {
+.banner-wrapper {
+height: 558px;
+}
+
+.banner-logo-wrapper {
+
+transform: translateX(40px) translateY(-50%);
+width: 250px;
+height: auto;
+}
+}
+
+@media (max-width: 768px) {
+.banner-wrapper {
+height: 0;
+padding-bottom: 206.66%;
+}
+
+.banner-image {
+
+
+height: auto;
+}
+
+.banner-logo-wrapper {
+
+left: 50%;
+top: 10%;
+transform: translateX(-50%);
+
+width: 250px;
+height: auto;
+}
+.banner-logo-image {
+
+height: 0;
+padding-bottom: calc(100% / var(--mob-aspect-ratio));
+
+
+}
+.logo{
+height: auto;
+}
+
+}
+
+
+
+
+
+{% endstyle %}
+
+<div class="banner-section1">
+<div class="banner-wrapper ">
+    <!-- 图片元素 -->
+    <picture>
+        <source media="(max-width:768px)" srcset="
+        {{section.settings.banner-image-phone | image_url: width: 500}} 500w,
+        {{section.settings.banner-image-phone | image_url: width: 750}} 750w,
+        {{section.settings.banner-image-phone | image_url: width: 1100}} 1100w,
+        {{section.settings.banner-image-phone | image_url: width: 1500}} 1500w">
+
+        {% comment %} <img src="{{section.settings.banner-image-desktop | image_url}}" alt="Responsive Image"
+            class="banner-image"> {% endcomment %}
+        {{
+        section.settings.banner-image-desktop
+        | image_url: width: 3840
+        | image_tag:
+        class: "banner-image",
+        widths: '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680',
+        fetchpriority: 'high'
+        }}
+    </picture>
+    <div class="banner-logo-wrapper scroll-trigger scroll-trigger--offscreen animate--slide-in" data-cascade>
+        <div class="banner-logo-image" style="--pc-aspect-ratio: {{section.settings.banner-image_with_text.aspect_ratio}};--mob-aspect-ratio:
+{{section.settings.banner-image_with_text.aspect_ratio}};">
+            <img src="{{section.settings.banner-image_with_text | image_url}}" alt="Logo" class="logo">
+        </div>
+    </div>
+    <div class="cover">
+
+    </div>
+</div>
+</div>
+
+{% schema %}
+{
+"name": "banner-image",
+"settings": [
+{
+"type": "image_picker",
+"id": "banner-image-desktop",
+"label": "banner-image-desktop"
+},
+{
+"type": "image_picker",
+"id": "banner-image_with_text",
+"label": "image-text"
+},
+{
+"type": "image_picker",
+"id": "banner-image-phone",
+"label": "banner-image-phone"
+}
+]
+}
+{% endschema %}

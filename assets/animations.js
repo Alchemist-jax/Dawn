@@ -20,6 +20,28 @@ function onIntersection(elements, observer) {
     }
   });
 }
+//1.InterSectionObserver的回调函数有两个接收值，被观察的所有元素，是一个数组，还有观察对象oberver。
+//2.为什么要传入这两个值？因为每个被观察元素需要判断是否进入视口。进入视口元素就执行动画，没进入视口的元素都加上scroll-trigger--offscreen类，动画就不会执行。
+//3.可以根据元素的data-cascade来设置出现顺序。由于动画一般只执行一次，进入视口执行动画后就停止观察该元素。
+
+// function onIntersection(elements,oberver){
+//    elements.forEach((element,index)=>{
+    
+//       if(element.isIntersecting){
+//         const elementTarget= element.target;
+//         if(elementTarget.contains(SCROLL_ANIMATION_OFFSCREEN_CLASSNAME)){
+//         elementTarget.classList.remove(SCROLL_ANIMATION_OFFSCREEN_CLASSNAME);
+//          if(elementTarget.hasAttribute('data-cascade'))
+//           elementTarget.setAttribute('style', `--animation-order: ${index};`);
+//         }
+//          oberver.unobserve(elementTarget);
+
+//       }else{
+//         elementTarget.classList.add(SCROLL_ANIMATION_OFFSCREEN_CLASSNAME);
+
+//       }
+//    });
+// }
 
 function initializeScrollAnimationTrigger(rootEl = document, isDesignModeEvent = false) {
   const animationTriggerElements = Array.from(rootEl.getElementsByClassName(SCROLL_ANIMATION_TRIGGER_CLASSNAME));
@@ -37,6 +59,21 @@ function initializeScrollAnimationTrigger(rootEl = document, isDesignModeEvent =
   });
   animationTriggerElements.forEach((element) => observer.observe(element));
 }
+// function initializeScrollAnimationTrigger(rootEl=document,isDesignModeEvent=false){
+// const animationTriggerElements=Array.from(rootEl.getElementsByClassName(SCROLL_ANIMATION_TRIGGER_CLASSNAME));
+// if(animationTriggerElements.length==0) return;
+// if(isDesignModeEvent){
+//       animationTriggerElements.forEach((element)=>{
+//         element.classList.add('scroll-trigger--design-mode');
+//       });
+//       return
+// }
+// //这里要用到一个浏览器的API，需要实例化。这个API是用来监控元素是否进入视口的，参数是一个回调函数和一个json数据，就是当元素进入或离开视口，
+// // 就会自动触发这个回调函数，json数据是位置。
+
+// const observer = new IntersectionObserver(onIntersection,{rootMargin:'0px 0px -50px 0px'});
+// animationTriggerElements.forEach((element)=>{observer.observe(element)});
+// }
 
 // Zoom in animation logic
 function initializeScrollZoomAnimationTrigger() {
@@ -95,6 +132,8 @@ window.addEventListener('DOMContentLoaded', () => {
   initializeScrollAnimationTrigger();
   initializeScrollZoomAnimationTrigger();
 });
+//监听页面，当页面加载时，调用 initializeScrollAnimationTrigger函数
+//window.addEventListener('DOMContentLoaded',()=>{  initializeScrollAnimationTrigger();})
 
 if (Shopify.designMode) {
   document.addEventListener('shopify:section:load', (event) => initializeScrollAnimationTrigger(event.target, true));

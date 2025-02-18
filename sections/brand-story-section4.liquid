@@ -1,0 +1,119 @@
+{{ 'brand-story-section4.css' | asset_url | stylesheet_tag }}
+
+<section id="{{section.id}}">
+               <div class="brand-section4">
+                        <div class="section4-brand1-wrapper">
+                            <div class="section4-brand1-image-box">
+                                <div class="section4-brand1-image-placeholder " style="--pc-aspect-ratio: {{section.settings.pc-story-image-1.aspect_ratio}};--mob-aspect-ratio:
+{{section.settings.mb-story-image-1.aspect_ratio}};">
+                                    <picture>
+                                        <source media="(max-width:768px)" srcset="
+                                        {{section.settings.mb-story-image-1 | image_url: width: 500}} 500w,
+                                        {{section.settings.mb-story-image-1 | image_url: width: 750}} 750w,
+                                        {{section.settings.mb-story-image-1 | image_url: width: 1100}} 1100w,
+                                        {{section.settings.mb-story-image-1 | image_url: width: 1500}} 1500w">
+                                
+                                        {% comment %} <img src="{{section.settings.banner-image-desktop | image_url}}" alt="Responsive Image"
+                                            class="banner-image"> {% endcomment %}
+                                        {{
+                                            section.settings.pc-story-image-1
+                                        | image_url: width: 3840
+                                        | image_tag:
+                                        class: "section4-banner1-image",
+                                        widths: '450, 660, 900, 1320, 1500,1800, 2136, 2400, 3600, 7680',
+                                        fetchpriority: 'auto'
+                                        }}
+                                        
+                                    </picture>
+                                </div>
+                            </div>
+                            <div class="section4-brand1-text-head">
+                                <h3>
+                                    <p>Artistic Product Design, 
+                                        <br>User-friendly Software Interaction, 
+                                        <br>and Professional Hardware Development.
+                                    </p>
+                                </h3>
+                            </div>
+                            <div class="section4-brand1-text-bottom">
+                                 <div class="row gx-2 gx-xl-3 gx-xxl-4 gy-2 gy-md-0">
+                                    <div class="col-6 col-md-3 scroll-trigger animate--slide-in scroll-trigger--offscreen " data-cascade>
+                                         <div class="content-text">
+                                            <h4> {{section.settings.text-1}} </h4>
+                                            <p>Let lyrics flow with every beat, creating moments of calm and connection.</p>
+                                         </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 scroll-trigger animate--slide-in scroll-trigger--offscreen" data-cascade>
+                                        <div class="content-text">
+                                            <h4> {{section.settings.text-2}} </h4>
+
+                                            <p>
+                                                Art blends with life, and every corner of your home is a view worth savoring.
+                                            </p>
+                                         </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 scroll-trigger animate--slide-in scroll-trigger--offscreen" data-cascade>
+                                        <div class="content-text">
+                                            <h4> {{section.settings.text-3}} </h4>
+
+                                            <p>
+                                                With a simple tap and swipe, elevate your life with richness and ease.
+                                            </p>
+                                         </div>
+
+                                    </div>
+                                    <div class="col-6 col-md-3 scroll-trigger animate--slide-in scroll-trigger--offscreen " data-cascade>
+                                        <div class="content-text">
+                                            <h4> {{section.settings.text-4}} </h4>
+
+                                           <p>
+                                            Your go-to for parties and entertainment that always unlocks new ways to have fun.
+                                        </p>
+                                         </div>
+                                    </div>
+                                    
+                                 </div>
+                            </div>
+                        </div>
+               </div>
+</section>
+
+{% schema %}
+   
+   
+    {
+     "name": "brand-story-section4",
+     "settings": [
+     {
+     "type": "image_picker",
+     "id": "pc-story-image-1",
+     "label": "pc-story-image-1"
+     },
+     {
+     "type": "image_picker",
+     "id": "mb-story-image-1",
+     "label": "mobile-story-image-1"
+     },
+     {
+        "type": "richtext",
+        "id": "text-1",
+        "label": "Text-1"
+      },
+      {
+        "type": "richtext",
+        "id": "text-2",
+        "label": "Text-2"
+      },
+      {
+        "type": "richtext",
+        "id": "text-3",
+        "label": "Text-3"
+      },
+      {
+        "type": "richtext",
+        "id": "text-4",
+        "label": "Text-4"
+      }
+     ]
+     }
+     {% endschema %}

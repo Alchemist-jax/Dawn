@@ -36,6 +36,7 @@
   {
     "name": "t:settings_schema.colors.name",
     "settings": [
+    
       {
         "type": "color_scheme_group",
         "id": "color_schemes",

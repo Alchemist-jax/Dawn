@@ -1,0 +1,252 @@
+{% style %}
+    
+    
+
+    .brand-section2 {
+        padding-bottom: 160px;
+        background-color: #111;
+    }
+
+    .brand-section2-wrapper {
+
+        max-width: 1920px;
+        margin: 0 auto;
+        background-color: #111;
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+
+
+    .brand2-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .brand2 {
+        height: 0;
+        padding-bottom: calc(100%/var(--section2-brand2-aspect-ratio));
+    }
+
+    .text-container {
+        color: aliceblue;
+    }
+    h1{
+        color: aliceblue;
+        
+        margin-block-start: 0;
+        text-align: center;
+        padding-top:16px;
+
+    }
+    .section2-title {
+        font-size: 36px;
+
+        margin-bottom: 8px;
+    }
+
+    .section2-text-area{
+        max-width: 1084px;
+        margin: 0 auto;
+        margin-top: 38px;
+        font-size: 16px;
+        text-align:center;
+     
+
+    }
+
+    .brand3 {
+        max-width: 1920px;
+        margin-top: 64px;
+
+    }
+
+    .section2-brand4 {
+        height: 0;
+        padding-bottom: calc(100%/var(--section2-brand4-aspect-ratio));
+
+    }
+
+    .brand4 {
+        max-width:768px;
+        display: none;
+
+    }
+
+
+    .brand3-image {
+        width: 100%;
+        height:auto;
+    }
+
+    .section2-brand3 {
+        height: 0;
+        padding-bottom: calc(100%/var(--section2-brand3-aspect-ratio));
+
+    }
+
+    .brand4-image {
+        width: 100%;
+        height:auto;
+
+    }
+
+    @media (max-width:1440px) {
+        .brand-section2 {
+            padding-bottom: 50px;
+        }
+
+        .brand-section2-wrapper {
+
+
+            padding-left: 96px;
+            padding-right: 96px;
+        }
+
+        .section2-text-area {
+            max-width: 864px;
+
+        }
+    }
+
+    @media (max-width:1200px) {
+        .brand-section2 {
+            padding-bottom: 35px;
+        }
+
+        .brand-section2-wrapper {
+
+
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+
+        .section2-text-area{
+            max-width: 700px;
+
+        }
+
+    }
+
+    @media (max-width:768px) {
+        .brand-section2 {
+            padding-bottom: 20px;
+        }
+        .brand-section2-wrapper {
+
+
+        padding-left: 24px;
+        padding-right: 24px;
+}
+        .section2-brand2-placeholder {
+            display: none;
+        }
+
+        .brand3 {
+            display: none;
+        }
+
+        .brand4 {
+
+            display: block;
+            margin-top: 64px;
+            margin-left: -24px;
+            margin-right: -24px;
+        }
+
+    }
+{% endstyle %}
+
+</head>
+
+<body>
+
+    <div class="brand-section2 ">
+        <div class="brand-section2-wrapper ">
+            <div class="section2-brand2-placeholder">
+                <div class="brand2 scroll-trigger animate--slide-in" style="--section2-brand2-aspect-ratio:{{section.settings.story-image-1.aspect_ratio}}">
+                    
+                    {% comment %} <img src="/images/section2-brand1.webp" alt="brand2" class="brand2-image"> {% endcomment %}
+                    {{
+                    section.settings.story-image-1
+                    | image_url: width: 3000
+                    | image_tag:
+                    class: "brand2-image",
+                    widths: '450, 660, 900, 1320, 1800, 2136, 2400 ,3000 ',
+                    fetchpriority: 'auto'
+                    }}
+                </div>
+            </div>
+
+            <div class="text-container text-center scroll-trigger animate--slide-in">
+                <h1 class="section2-title ">Visualize Your Music</h1>
+                <div class="section2-text-area">
+
+                    <p>MorningBlues is a company dedicated to crafting visually stunning music installations that engage
+                        different senses by breaking down the boundaries between sound and vision.</p>
+                    <p>Founded in 2024 in Hong Kong, we are committed to leading the evolution of visual music artistry
+                        and enhancing these experiences in both home environments and personal wear.We believe that the
+                        aesthetic essence of music transcends mere audio-visual experience; it is also expressed through
+                        the diverse forms and spaces of communication devices.</p>
+                    <p>A fresh take on home aesthetics, making beauty<br>an essential part of life.</p>
+                </div>
+            </div>
+            <div class="brand3">
+
+                <div class="section2-brand3" style="--section2-brand3-aspect-ratio:{{section.settings.story-image-2.aspect_ratio}}">
+
+                    {% comment %} <img src="/images/section2-brand2.webp" alt="section2-brand2" class="brand3-image"> {% endcomment %}
+                    {{
+                        section.settings.story-image-2
+                        | image_url: width: 2000
+                        | image_tag:
+                        class: "brand3-image",
+                        widths: '450, 660, 900, 1320, 1800, 2136, 2400 ,3000 ',
+                        fetchpriority: 'auto'
+                        }}
+                </div>
+
+            </div>
+            <div class="brand4">
+
+                <div class="section2-brand4" style="--section2-brand4-aspect-ratio:{{section.settings.story-image-3.aspect_ratio}}">
+
+                    {% comment %} <img src="/images/section2-brand3.png" alt="section2-brand2" class="brand4-image"> {% endcomment %}
+                    {{
+                        section.settings.story-image-3
+                        | image_url: width: 750
+                        | image_tag:
+                        class: "brand4-image",
+                        widths: '450, 660, 900, 1320, 1800, 2136, 2400 ,3000 ',
+                        fetchpriority: 'auto'
+                        }}
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    {% schema %}
+    {
+    "name": "brand-story-section2",
+    "settings": [
+    {
+    "type": "image_picker",
+    "id": "story-image-1",
+    "label": "story-image-1"
+    },
+    {
+    "type": "image_picker",
+    "id": "story-image-2",
+    "label": "story-image-2"
+    },
+    {
+    "type": "image_picker",
+    "id": "story-image-3",
+    "label": "story-image-3"
+    }
+    ]
+    }
+    {% endschema %}

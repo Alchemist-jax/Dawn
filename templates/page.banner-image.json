@@ -1,0 +1,21 @@
+{
+    "sections": {
+      "main": {
+        "type": "banner-image"
+      },
+      "part2": {
+        "type": "brand-story-section2"
+      }
+      ,
+      "part3": {
+        "type": "brand-story-section3"
+      },
+       "part4": {
+        "type": "brand-story-section4"
+      }
+    },
+    "order": [
+      "main","part2","part3","part4"
+    ]
+  }
+  

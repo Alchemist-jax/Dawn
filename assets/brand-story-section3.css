@@ -1,0 +1,425 @@
+.brand-section3 {
+    background-color: #111111;
+}
+
+.section3-wrapper {
+    max-width: 2560px;
+    margin: 0 auto;
+    background-color: #111111;
+    padding-left: 120px;
+    padding-right: 120px;
+    overflow: hidden;
+
+}
+
+.section3-banner-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+}
+
+.section3-brand3-image-box1 {
+
+    height: 880px;
+    margin-right: -160px;
+    border-radius: 30px 0 0 30px;
+    overflow: hidden;
+    /* 分别是左上角、右上角、右下角、左下角的圆角半径 */
+
+}
+
+.space-box {
+    position: relative;
+}
+
+.section3-brand3-text-box {
+    padding: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.text-head h1 {
+    padding-top: 0;
+    text-align: start;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.text-bottom p {
+    color: aliceblue;
+    font-size: 24px;
+}
+
+.section3-brand4 {
+    margin-top: 128px;
+    position: relative;
+}
+
+.section3-brand4-image-box {
+    height: 1080px;
+    border-radius: 0 30px 30px 0;
+    overflow: hidden;
+    margin-left: -120px;
+}
+
+.section3-banner4-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+
+}
+
+.section3-brand4-text-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.section3-brand4 .section3-brand4-text-box .section3-brand4-text-head h2 p2 {
+    padding-right: 50px;
+}
+
+.section3-brand4-text-head h2 {
+    padding-top: 64px;
+    padding-right: 64px;
+    text-align: right;
+    color: aliceblue;
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+.section3-brand4-text-content p {
+    padding-top: 64px;
+    padding-right: 64px;
+    font-size: 16px;
+    text-align: right;
+    color: aliceblue;
+}
+
+.section3-banner5-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section3-brand5 {
+    margin-top: 352px;
+}
+
+.section3-brand5-image-box {
+    height: 1280px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.section3-brand5 {
+    position: relative;
+}
+
+.section3-brand5 .section3-brand4-text-box .section3-brand4-text-head h2 {
+    text-align: left;
+
+    padding-right: 0;
+
+
+}
+
+.section3-brand5 .section3-brand4-text-content p {
+    text-align: left;
+
+}
+
+.section3-brand5 .section3-brand4-text-box {
+    padding-top: 50px;
+    padding-left: 50px;
+    left: 0;
+}
+
+
+@media (max-width:1440px) {
+    .section3-wrapper {
+        padding-left: 96px;
+        padding-right: 96px;
+
+    }
+
+    .section3-brand3-image-box1 {
+        height: 666px;
+        margin-right: -140px;
+
+    }
+
+    .text-head h1 {
+
+        font-size: 24px;
+
+    }
+
+    .text-bottom p {
+        font-size: 16px;
+    }
+
+    .section3-brand4-image-box {
+        height: 813px;
+
+    }
+
+    .section3-brand4-text-head h2 {
+        padding-top: 50px;
+        padding-right: 50px;
+
+    }
+
+    .section3-brand4-text-content p {
+        padding-top: 20px;
+        padding-right: 50px;
+        padding-left: 0;
+        text-align: left;
+
+    }
+
+    .section3-brand5-image-box {
+        height: 1024px;
+    }
+
+    .section3-brand4-text-content p {
+        text-align: right;
+    }
+}
+
+@media (max-width:1200px) {
+    .section3-wrapper {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+
+    .section3-brand3-image-box1 {
+        height: 555px;
+        margin-right: -120px;
+
+    }
+
+    .section3-brand4-text-content p {
+        text-align: right;
+    }
+
+    .section3-brand4-image-box {
+        height: 621px;
+
+    }
+
+    .section3-brand4-text-head h2 {
+        padding-top: 38px;
+        padding-right: 38px;
+
+    }
+
+    .section3-brand4-text-content p {
+        padding-top: 38px;
+        padding-right: 38px;
+
+    }
+
+    .section3-brand5-image-box {
+        height: 820px;
+    }
+
+
+}
+
+@media (max-width:1024px) {
+    .section3-wrapper {
+        padding-left: 38px;
+        padding-right: 38px;
+    }
+
+    .section3-brand4-text-content p {
+        text-align: right;
+    }
+
+    .section3-brand3-image-box1 {
+        height: 474px;
+        margin-right: -100px;
+
+    }
+
+    .section3-brand4-text-head h2 {
+        padding-top: 28px;
+        padding-right: 28px;
+
+    }
+
+    .section3-brand5 .section3-brand4-text-content p {
+        padding-top: 28px;
+        padding-right: 28px;
+
+    }
+
+    .section3-brand5 .section3-brand4-text-box .section3-brand4-text-head h2 {
+        padding-top: 28px;
+        padding-right: 28px;
+
+    }
+
+    .section3-brand5 .section3-brand4-text-box .section3-brand4-text-head h2 {
+        font-size: 28px;
+
+
+    }
+
+    .section3-brand5 .section3-brand4-text-box h2 {
+        padding-top: 0px;
+    }
+
+}
+
+
+@media (max-width:768px) {
+    .section3-wrapper {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .section3-brand3-image-box1 {
+        height: 474px;
+        margin-right: -100px;
+
+    }
+
+    .section3-brand4-text-content p {
+        text-align: left;
+    }
+
+
+
+    .section3-brand3-text-box {
+        position: static;
+        height: auto;
+
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 32px;
+
+    }
+
+    .text-head {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 32px;
+
+    }
+
+    .section3-brand4 {
+        margin-top: 40px;
+    }
+
+    .section3-brand4-image-box {
+        height: 437px;
+    }
+
+    .section3-brand5-image-box {
+        height: 437px;
+
+    }
+
+    .section3-brand4-text-head h2 {
+        padding-top: 24px;
+        padding-right: 24px;
+
+    }
+
+    .section3-brand4-text-content p {
+        padding-top: 24px;
+        padding-right: 24px;
+
+    }
+
+
+    .section3-brand4-text-head {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+    }
+
+    .section3-brand4-text-box {
+        position: static;
+
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .section3-brand4-text-head h2 {
+
+        font-size: 24px;
+
+    }
+
+    .section3-brand5 {
+        margin-top: 43px;
+    }
+
+    .section3-brand4-text-content p {
+
+        text-align: left;
+
+    }
+
+    .section3-brand5 .section3-brand4-text-content p {
+        text-align: left;
+        padding: 24px;
+
+
+
+    }
+
+    .section3-brand5 .section3-brand4-text-box .section3-brand4-text-head {
+        left: 0;
+
+
+    }
+
+    .section3-brand5 .section3-brand4-text-box {
+        padding-left: 10px;
+        padding-top: 0px;
+
+
+    }
+
+    .section3-brand5 .section3-brand4-text-box .section3-brand4-text-content p {
+        padding-left: 0;
+        padding-top: 24px;
+
+
+    }
+
+
+    .section3-brand5 .section3-brand4-text-box .section3-brand4-text-head h2 {
+        left: 0;
+        padding: 32px;
+
+
+    }
+
+    .section3-brand5-image-box {
+        margin-right: -24px;
+        border-radius: 30px 0 0 30px;
+    }
+
+
+}
